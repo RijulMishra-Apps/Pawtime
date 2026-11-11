@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fff8f5" />
+  <title>PawTime — Soft Focus Club</title>
+  <meta name="description" content="A cozy little focus timer with adorable companions." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Nunito:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="PawTime home"><span class="brand-mark">🐾</span><span>PawTime</span></a>
+      <div class="top-note"><span class="sparkle">✦</span> soft focus club <span class="sparkle">✦</span></div>
+      <button class="icon-button" id="soundToggle" aria-label="Toggle sound" title="Toggle sound">♫</button>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow"><span class="eyebrow-dot"></span> YOUR LITTLE CORNER OF CALM</div>
+      <h1>Make time for<br><em>what matters.</em></h1>
+      <p class="subtitle">A tiny bit of focus, a little furry company.</p>
+    </section>
+
+    <section class="workspace">
+      <div class="timer-card">
+        <div class="card-topline"><span>FOCUS SESSION</span><span class="live-label" id="statusLabel"><i></i> READY WHEN YOU ARE</span></div>
+        <div class="pet-stage">
+          <div class="pet-glow"></div>
+          <div class="pet" id="petDisplay" aria-label="Your focus companion">🐻</div>
+          <div class="pet-spark s1">✦</div><div class="pet-spark s2">✧</div><div class="pet-spark s3">♡</div>
+          <div class="pet-caption" id="petCaption">Mochi is cheering you on!</div>
+        </div>
+        <div class="timer-readout" id="timer">00:00:00</div>
+        <div class="timer-subtitle" id="timerHint">Every little moment counts.</div>
+        <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="controls">
+          <button class="control-button secondary" id="resetBtn">↺ <span>Reset</span></button>
+          <button class="control-button primary" id="startBtn"><span class="play-icon">▶</span><span id="startText">Start focusing</span></button>
+          <button class="control-button secondary" id="finishBtn">✓ <span>Save</span></button>
+        </div>
+        <p class="keyboard-hint">A gentle reminder: you don't have to be perfect, just begin.</p>
+      </div>
+
+      <aside class="side-panel">
+        <div class="panel-card companion-card">
+          <div class="panel-heading"><div><span class="mini-kicker">YOUR SIDEKICK</span><h2>Pick a pal</h2></div><span class="heading-icon">♡</span></div>
+          <div class="pet-picker" id="petPicker">
+            <button class="pet-choice selected" data-pet="🐻" data-name="Mochi"><span>🐻</span><small>Mochi</small></button>
+            <button class="pet-choice" data-pet="🐱" data-name="Miso"><span>🐱</span><small>Miso</small></button>
+            <button class="pet-choice" data-pet="🐰" data-name="Clover"><span>🐰</span><small>Clover</small></button>
+            <button class="pet-choice" data-pet="🦊" data-name="Tofu"><span>🦊</span><small>Tofu</small></button>
+          </div>
+          <p class="tiny-note">Your companion stays by your side while you focus.</p>
+        </div>
+        <div class="panel-card stats-card">
+          <div class="panel-heading"><div><span class="mini-kicker">A LITTLE PROGRESS</span><h2>Today's glow</h2></div><span class="heading-icon">✧</span></div>
+          <div class="stat-grid">
+            <div class="stat"><strong id="todayTime">0m</strong><span>focused today</span></div>
+            <div class="stat"><strong id="sessionCount">0</strong><span>sessions</span></div>
+          </div>
+          <div class="daily-message"><span>🌷</span><span id="dailyMessage">Small steps are still steps.</span></div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="history-card">
+      <div class="history-header"><div><span class="mini-kicker">YOUR LITTLE WINS</span><h2>Session journal</h2></div><button class="text-button" id="clearHistory">Clear history</button></div>
+      <div id="historyList" class="history-list"><div class="empty-state"><span>☁️</span><p>Your focus moments will bloom here.</p><small>Start a session and save your first little win.</small></div></div>
+    </section>
+    <footer>Made with <span>♥</span> and a little bit of pawsitivity <b>·</b> PawTime</footer>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
